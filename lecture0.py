@@ -1,4 +1,13 @@
 '''
+1. You don't need to know everything
+2. Learn how to learn, make it, make it work, then make it pretty
+3. Perfection is a lie
+4. You'll never feel ready
+5. Problem solving is key
+6. Burnout is real
+'''
+
+'''
 functions (print, etc.)
 '''
 # Ask user for their name, strip any whitespace and uppercase first char
