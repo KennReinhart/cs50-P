@@ -5,15 +5,25 @@ def main():
     # name, house = get_student()
     # print(f"{name} from {house}")
     student = get_student()
-    if student[0] == "Padma" or "padma":
-        student[0] = "Padma"
-        student[1] = "Ravenclaw"
-    print(f"{student[0]} from {student[1]}")
+    # if student[0] == "Padma" or "padma":
+    #     student[0] = "Padma"
+    #     student[1] = "Ravenclaw"
+    print(f"{student['name']} from {student['house']}")
 
 def get_student():
-    name = input("What is your name? ")
-    house = input("What is your house? ")
-    return [name, house] #this right here, if [] means lists
+    # using dict is less worrysome to remember which is 0,1 and so forth
+    student = {}
+    student["name"] = input("Name: ")
+    student["house"] = input("House: ")
+    # -- or --
+    # name = input("Name: ")
+    # house = input("House: ")
+    # return {"name": name, "house": house}
+
+    # name = input("What is your name? ")
+    # house = input("What is your house? ")
+    return student #this right here, if [name, house] means lists
 
 if __name__ == "__main__":
     main()
+
