@@ -5,9 +5,9 @@ def main():
     # name, house = get_student()
     # print(f"{name} from {house}")
     student = get_student()
-    # if student[0] == "Padma" or "padma":
-    #     student[0] = "Padma"
-    #     student[1] = "Ravenclaw"
+    if student["name"].lower() == "padma":
+        student["name"] = "Padma"
+        student["house"] = "Ravenclaw"
     print(f"{student['name']} from {student['house']}")
 
 def get_student():
