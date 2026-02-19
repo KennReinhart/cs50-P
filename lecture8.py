@@ -1,7 +1,12 @@
 # OOP, object oriented programming
 # tuples, another type of data thats a collection of values,similar to a list but its immutable(unable to be changed).
 class Student:
-    ...
+    #instance variables
+    def __init__(self, name, house):
+        if not name:
+            raise ValueError("Student name cannot be empty")
+        self.name = name
+        self.house = house
 
 def main():
     # name, house = get_student()
@@ -28,7 +33,7 @@ def get_student():
     #using class
     name = input("Enter your name: ")
     house = input("Enter your house: ")
-    student = Student(name, house)
+    student = Student(name, house) #object, args
     return student #this right here, if [name, house] means lists
 
 if __name__ == "__main__":
