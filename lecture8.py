@@ -5,8 +5,21 @@ class Student:
     def __init__(self, name, house):
         if not name:
             raise ValueError("Student name cannot be empty")
+
         self.name = name
         self.house = house
+
+    def __str__(self):
+        return f"{self.name} {self.house}"
+
+    # Getter
+    def house(self):
+        return self.house
+    # Setter
+    def house(self, house):
+        if house not in ["Gryffindor","Hufflepuff","Ravenclaw","Slytherin"]:
+            raise ValueError("Invalid house name")
+        self.house = house #1:24:04
 
 def main():
     # name, house = get_student()
@@ -15,7 +28,7 @@ def main():
     # if student["name"].lower() == "padma":
     #     student["name"] = "Padma"
     #     student["house"] = "Ravenclaw"
-    print(f"{student.name} from {student.house}")
+    print(student) #(f"{student.name} from {student.house}")
 
 def get_student():
     # using dict is less worrysome to remember which is 0,1 and so forth
@@ -33,8 +46,8 @@ def get_student():
     #using class
     name = input("Enter your name: ")
     house = input("Enter your house: ")
-    student = Student(name, house) #object, args
-    return student #this right here, if [name, house] means lists
+    #student = Student(name, house) #object, args
+    return Student(name, house) #this right here, if [name, house] means lists
 
 if __name__ == "__main__":
     main()
