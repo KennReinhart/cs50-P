@@ -1,25 +1,34 @@
 # OOP, object oriented programming
 # tuples, another type of data thats a collection of values,similar to a list but its immutable(unable to be changed).
-class Student:
+#@classmethod
+class Wizard():
+    def __init__(self, name):
+        if not name:
+            raise ValueError("Wizard name cannot be empty")
+        self.name = name
+
+class Student(Wizard):
     #instance variables
     def __init__(self, name, house):
-        if not name:
-            raise ValueError("Student name cannot be empty")
-
-        self.name = name
+        super().__init__(name)
         self.house = house
+    #
+    # # Getter
+    # def house(self):
+    #     return self.house
+    # # Setter
+    # def house(self, house):
+    #     if house not in ["Gryffindor","Hufflepuff","Ravenclaw","Slytherin"]:
+    #         raise ValueError("Invalid house name")
+    #     self.house = house #1:24:04
 
-    def __str__(self):
-        return f"{self.name} {self.house}"
+class Professor(Wizard):
+    def __init__(self, name, subject):
+        super().__init__(name)
+        if not name:
+            raise ValueError("Professor name cannot be empty")
+        self.subject = subject
 
-    # Getter
-    def house(self):
-        return self.house
-    # Setter
-    def house(self, house):
-        if house not in ["Gryffindor","Hufflepuff","Ravenclaw","Slytherin"]:
-            raise ValueError("Invalid house name")
-        self.house = house #1:24:04
 
 def main():
     # name, house = get_student()
@@ -46,9 +55,11 @@ def get_student():
     #using class
     name = input("Enter your name: ")
     house = input("Enter your house: ")
+    #print(type(name))
     #student = Student(name, house) #object, args
     return Student(name, house) #this right here, if [name, house] means lists
 
+#str.lower(); str params .lower() is method
 if __name__ == "__main__":
     main()
 
